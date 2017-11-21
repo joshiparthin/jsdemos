@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/threesixty.css">
+</head>
+
+<body>
+    <div class="threesixty product">
+        <div class="spinner">
+            <span>0%</span>
+        </div>
+        <ol class="threesixty_images"></ol>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/threesixty.min.js" type="text/javascript"></script>
+    <script>
+        window.onload = init;
+        var product;
+
+        function init() {
+            product = $('.product').ThreeSixty({
+                totalFrames: 24, // Total no. of image you have for 360 slider
+                endFrame: 24, // end frame for the auto spin animation
+                currentFrame: 1, // This the start frame for auto spin
+                imgList: '.threesixty_images', // selector for image list
+                progress: '.spinner', // selector to show the loading progress
+                imagePath: 'img/', // path of the image assets
+                filePrefix: '', // file prefix if any
+                ext: '.jpg', // extention for the assets
+                height: 1000,
+                width: 447,
+                navigation: true,
+                autoplayDirection: 1
+                
+            });
+            product.play();
+
+            console.log('Done');
+
+
+            // $('.custom_previous').bind('click', function (e) {
+            //     product.previous();
+            // });
+
+            // $('.custom_next').bind('click', function (e) {
+            //     product.next();
+            // });
+
+            // $('.custom_play').bind('click', function (e) {
+            //     product.play();
+            // });
+
+            // $('.custom_stop').bind('click', function (e) {
+            //     product.stop();
+            // });
+        }
+    </script>
+
+
+</body>
+
+</html>
